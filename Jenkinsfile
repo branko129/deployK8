@@ -3,8 +3,6 @@ node {
       
   stage('Deploy to k8') {
 
-    sshagent(['k8']) {
-      sh "ssh root@neomkubedev00.webmedia.int kubectl apply -f /tmp/portal-gateway.yaml"
-                }
+    sh 'scp /tmp/test root@neomkubedev00.webmedia.int:/tmp'
        }
 }
